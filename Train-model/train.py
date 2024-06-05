@@ -117,7 +117,7 @@ def eval_net(model, test_data, test_labels):
   pred = np.argmax(model.predict(test_data), axis=1)
   confusion = tf.math.confusion_matrix(labels=tf.constant(test_labels),
                                        predictions=tf.constant(pred),
-                                       num_classes=4)
+                                       num_classes=3)
   print(confusion)
   print("Loss {}, Accuracy {}".format(loss, acc))
 
@@ -188,14 +188,14 @@ def train_net(
   idx = 0
   print("*********************************************************************************")
   print("Model after last epoch:")
-  eval_net(model, test_data, test_labels)
+  #eval_net(model, test_data, test_labels)
   model.save(os.path.join(model_path, 'weights.h5'))
   prepare_and_save_tflite_nets(model, "model.tflite", "model_quantized.tflite")
 
   print("*********************************************************************************")
   print("Model of epoch with best " + weights_metric + ":")
   model.load_weights(chckpt_path)
-  eval_net(model, test_data, test_labels)
+  #eval_net(model, test_data, test_labels)
   model.save(os.path.join(model_path, 'weights_best_' + weights_metric + '.h5'))
   prepare_and_save_tflite_nets(model, "model_best_" + weights_metric + ".tflite", "model_quantized_best_" + weights_metric + ".tflite")
 
