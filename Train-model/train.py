@@ -50,23 +50,11 @@ def calculate_model_size(model):
 
 def build_cnn(seq_length):
   """Builds a convolutional neural network in Keras."""
-  model = tf.keras.Sequential([
-      tf.keras.layers.Conv2D(
-          8, (4, 3),
-          padding="same",
-          activation="relu",
-          input_shape=(seq_length, 3, 1)),  # output_shape=(batch, 128, 3, 8)
-      tf.keras.layers.MaxPool2D((3, 3)),  # (batch, 42, 1, 8)
-      tf.keras.layers.Dropout(0.1),  # (batch, 42, 1, 8)
-      tf.keras.layers.Conv2D(16, (4, 1), padding="same",
-                             activation="relu"),  # (batch, 42, 1, 16)
-      tf.keras.layers.MaxPool2D((3, 1), padding="same"),  # (batch, 14, 1, 16)
-      tf.keras.layers.Dropout(0.1),  # (batch, 14, 1, 16)
-      tf.keras.layers.Flatten(),  # (batch, 224)
-      tf.keras.layers.Dense(16, activation="relu"),  # (batch, 16)
-      tf.keras.layers.Dropout(0.1),  # (batch, 16)
-      tf.keras.layers.Dense(4, activation="softmax")  # (batch, 4)
-  ])
+  
+  model = ........
+
+
+  
   model_path = os.path.join("./netmodels", "CNN")
   print("Built CNN.")
   if not os.path.exists(model_path):
@@ -179,12 +167,11 @@ def train_net(
   if weights_metric == "val_accuracy" or weights_metric == "accuracy":
       mode = "max"
   chckpt_fct = ModelCheckpoint(chckpt_path, monitor=weights_metric, save_best_only=True, mode=mode, save_weights_only=True)
-  model.fit(train_data,
-            epochs=epochs,
-            validation_data=valid_data,
-            steps_per_epoch=1000,
-            validation_steps=int((valid_len - 1) / batch_size + 1),
-            callbacks=[tensorboard_callback, chckpt_fct])
+
+
+  # Trian The Model Here!
+      
+
   idx = 0
   print("*********************************************************************************")
   print("Model after last epoch:")
