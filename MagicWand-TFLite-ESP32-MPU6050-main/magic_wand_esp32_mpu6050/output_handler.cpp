@@ -22,15 +22,6 @@ void HandleOutput(tflite::ErrorReporter* error_reporter, int kind) {
         "WING:\n\r*         *         *\n\r *       * *       "
         "*\n\r  *     *   *     *\n\r   *   *     *   *\n\r    * *       "
         "* *\n\r     *         *\n\r");
-  } else if (kind == 100) {
-    error_reporter->Report(
-        "RING:\n\r          *\n\r       *     *\n\r     *         *\n\r "
-        "   *           *\n\r     *         *\n\r       *     *\n\r      "
-        "    *\n\r");
-  } else if (kind == 20) {
-    error_reporter->Report(
-        "SLOPE:\n\r        *\n\r       *\n\r      *\n\r     *\n\r    "
-        "*\n\r   *\n\r  *\n\r * * * * * * * *\n\r");
   } else if (kind == 1) {
     error_reporter->Report(
         "Zed:\n\r"
