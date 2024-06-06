@@ -36,18 +36,29 @@ import math
 
 LABEL_NAME = "gesture"
 DATA_NAME = "accel_ms2_xyz"
-folders = ["wing", "ring", "slope"]
+# You Can Add Your new Magic here!
+folders = ["wing", "zed",]
+# Dont Forget To Add Your txt Magic File name here.
 names = [
     "stefan",
     "patrick",
     "justin",
-    "yeongmi",
+    "yeongmi"
     "arthur",
     "kai",
     "nico",
     "filip",
     "lukas",
-    "peter"
+    "peter",
+    "A" ,
+    "B" ,
+    "C" ,
+    "D",
+    "E" ,
+    "F",
+    "G",
+    "H"
+
 ]
 
 
